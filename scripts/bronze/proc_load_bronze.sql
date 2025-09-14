@@ -3,6 +3,13 @@ Script Purpose:
     The following script is designed to load CSV data into database tables of the same name. 
     Tables are formatted in accordance with the source data.
 
+Usage:
+    This stored procedure does not accept any input parameters or return any values.
+    To use this procedure:
+        CALL bronze.load_bronze();
+        -- or with custom path:
+        CALL bronze.load_bronze('/your/custom/path');
+
 WARNING:
     Running this script will delete tables and all their contents. Please ensure that your date
     is backed up before running this script.
@@ -204,10 +211,3 @@ BEGIN
     END;
 END;
 $$;
-/*
-To Call Stored Procedure:
-
-    CALL bronze.load_bronze();
-    -- or with custom path:
-    CALL bronze.load_bronze('/your/custom/path');
-*/
