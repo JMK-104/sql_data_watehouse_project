@@ -22,11 +22,10 @@ WARNING:
 -- Description: Creates tables and loads CSV data for CRM and ERP source systems
 -- ==============================================
 
-CREATE OR REPLACE PROCEDURE bronze.load_bronze(
+CREATE
+OR REPLACE PROCEDURE bronze.load_bronze (
     p_base_path TEXT DEFAULT '/Users/justinkakuyo/Desktop/Dev/projects/SQL/sql-data-warehouse-project/datasets'
-)
-LANGUAGE plpgsql
-AS $$
+) LANGUAGE plpgsql AS $$
 DECLARE
     v_row_count INTEGER;
     v_crm_path TEXT;
@@ -210,4 +209,5 @@ BEGIN
             RAISE;
     END;
 END;
-$$;
+$$
+;
