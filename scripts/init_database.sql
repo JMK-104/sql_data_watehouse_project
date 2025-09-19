@@ -15,16 +15,27 @@ WARNING:
     backed up where necessary before running this script.
 */
 
--- Create a new database called 'data_warehouse'
-DROP DATABASE IF EXISTS data_warehouse; -- Use appropriate name if necessary
-CREATE DATABASE data_warehouse; -- Use appropriate name if necessary
+DROP DATABASE IF EXISTS data_warehouse
+;
 
+
+-- Use appropriate name if necessary
+CREATE DATABASE data_warehouse
+;
+
+
+-- Use appropriate name if necessary
 -- Multiple schemas needed: Bronze, Silver, Gold
 -- Create bronze schema
-CREATE SCHEMA bronze;
+CREATE SCHEMA bronze
+;
+
 
 -- Create silver schema
-CREATE SCHEMA silver;
+CREATE SCHEMA silver
+;
+
 
 -- Create gold schema
-CREATE SCHEMA gold;
+CREATE SCHEMA gold
+;
