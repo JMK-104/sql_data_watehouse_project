@@ -61,6 +61,13 @@ The Gold layer uses the "Star Schema", where the central fact table (fact_sales)
 
 ---
 
+### Usage
+
+To use this Data Warehouse: 
+- Initialize your database, creating the appropriate schemas. Run script 'init_database.sql' in the 'scripts' directory.
+- To execute the full ETL process, call 'etl.load_dwh()'. This will run bronze, silver, and gold processes in succession with a single call **[Recommended]**.
+- Alternatively, to run bronze, silver, and gold processes separately, call 'bronze.load_bronze()', 'silver.load_silver()', and 'gold.load_gold()' respectively.
+
 ## License
 
 This project is licensed under the [MIT License]. You are free to use, modify, and share this project with proper attribution.
