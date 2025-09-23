@@ -68,6 +68,60 @@ To use this Data Warehouse:
 - To execute the full ETL process, call 'etl.load_dwh()'. This will run bronze, silver, and gold processes in succession with a single call **[Recommended]**.
 - Alternatively, to run bronze, silver, and gold processes separately, call 'bronze.load_bronze()', 'silver.load_silver()', and 'gold.load_gold()' respectively.
 
+---
+
+
+
 ## License
 
 This project is licensed under the [MIT License]. You are free to use, modify, and share this project with proper attribution.
+
+---
+
+### Repository Structure
+
+```text
+sql_data_warehouse_project/
+|-- datasets/
+|   |-- source_crm/
+|   |   |-- cust_info.csv
+|   |   |-- prd_info.csv
+|   |   |-- sales_details.csv
+|   |-- source_erp/
+|       |-- CUST_AZ12.csv
+|       |-- LOC_A101.csv
+|       |-- PX_CAT_G1V2.csv
+|-- docs/
+|   |-- data_architecture_design.png
+|   |-- data_catalog.md
+|   |-- data_flow_gold.drawio.png
+|   |-- data_integration.drawio.png
+|   |-- data_model.drawio.png
+|-- scripts/
+|   |-- bronze/
+|   |   |-- ddl_bronze.sql
+|   |   |-- proc_load_bronze.sql
+|   |-- gold/
+|   |   |-- proc_load_gold.sql
+|   |-- silver/
+|   |   |-- ddl_silver.sql
+|   |   |-- proc_load_silver.sql
+|   |-- init_database.sql
+|   |-- proc_load_dwh.sql
+|-- tests/
+|   |-- bronze/
+|   |   |-- val_bronze_load_bronze.sql 
+|   |-- gold/
+|   |   |-- val_gold_all.sql
+|   |-- silver/
+|   |   |-- validations_crm/
+|   |   |   |-- val_silver_crm_cust_info.sql
+|   |   |   |-- val_silver_crm_prd_info.sql
+|   |   |   |-- val_silver_crm_sales_details.sql
+|   |   |-- validations_erp/
+|   |       |-- val_silver_erp_cust_az12.sql
+|   |       |-- val_silver_erp_loc_a101.sql
+|   |       |-- val_silver_erp_px_cat_g1v2.sql
+|-- LICENSE
+|-- README.md
+
